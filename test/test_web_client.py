@@ -2,7 +2,7 @@ import unittest
 from unittest import TestCase
 from unittest.mock import patch
 import asyncio
-from clients.web_client import odbc_insert
+from route.query_server import odbc_insert
 
 class TestWebClient(TestCase):
     def setUp(self):
