@@ -37,9 +37,12 @@ def odbc_query(command):
 
     return result
 
-    
-@query_server.route('/')
-def odbc_server_query():
+@query_server.route('/run', methods=['POST'])
+def run():
     command = request.form.get('command')
 
     return odbc_query(command)
+
+@query_server.route('/front')
+def odbc_query_front_end():
+    return render_template('command.html')
